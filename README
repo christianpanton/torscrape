@@ -1,0 +1,28 @@
+URL scraper with TOR support, to dynamicly change IPs while scaping.
+This is useful in scenarios where you are ratelimited by IP.
+
+To run this you need:
+- torctl
+- pycurl
+- TOR running on 127.0.0.1:9050 with controlport 127.0.0.1:9051
+
+
+EXAMPLE:
+
+import torscrape
+
+urls = ["http://icanhazip.com/"]*10
+
+def my_handler(url, data):
+    print url, data
+
+torscrape.process(urls, my_handler, refresh_ip=1, verbose=True)
+
+RANT:
+This would have been a perfect example to put in a class object.
+However, Python and multiprocessing does not play well with 
+stuff that you put in classes, making it completly impossible to
+make a nice OO-design.
+
+Also multiprocessing and keyboard interrupts make me cry.
+
