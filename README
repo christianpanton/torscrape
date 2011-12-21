@@ -1,4 +1,4 @@
-URL scraper with TOR support, to dynamicly change IPs while scaping.
+A Python URL scraper with TOR support, to dynamicly change IPs while scaping.
 This is useful in scenarios where you are ratelimited by IP.
 
 To run this you need:
